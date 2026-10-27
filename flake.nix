@@ -14,7 +14,10 @@
     in
     {
       devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [
+        buildInputs = with pkgs; [
+          just
+          pre-commit
+          sops
         ];
       };
     };
